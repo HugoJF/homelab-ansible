@@ -1,0 +1,7 @@
+---
+
+- name: configure traefik dynamic.yml
+  hosts: all
+  gather_facts: false
+  roles:
+    - lab

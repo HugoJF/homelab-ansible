@@ -1,0 +1,28 @@
+#jinja2: lstrip_blocks: True
+
+http:
+  routers:
+    {% for service in services %}
+    {{ service.name }}-router:
+      rule: "Host(`{{ service.url }}`)"
+      service: {{ service.name }}
+      {% if 'middlewaves' in service %}
+      middlewares:
+      {% for middleware in service.middlewares %}
+        - {{ middleware }}
+      {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+  middlewares:
+    add-admin-prefix:
+      addPrefix:
+        prefix: /admin
+
+  services:
+    {% for service in services %}
+      {{ service.name }}:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.15.6:{{ service.port }}"
+      {% endfor %}

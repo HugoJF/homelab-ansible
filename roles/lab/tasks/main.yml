@@ -1,0 +1,7 @@
+---
+
+- name: Generate Traefik dynamic configuration
+  template:
+    src: templates/traefik/dynamic.yml.j2
+    dest: /home/hugo/dynamic.yml
+    mode: 0755

@@ -1,0 +1,30 @@
+services:
+  - name: cups
+    url: cups.hugo.dev.br
+    port: 631
+
+  - name: octoprint
+    url: octoprint.hugo.dev.br
+    port: 8081
+
+  - name: firefly
+    url: firefly.hugo.dev.br
+    port: 6666
+
+  - name: pihole
+    url: pihole.hugo.dev.br
+    port: 800
+    middlewares:
+      - add-admin-prefix
+
+  - name: memos
+    url: memos.hugo.dev.br
+    port: 5230
+
+  - name: grafana
+    url: grafana.hugo.dev.br
+    port: 3000
+
+  - name: prometheus
+    url: prometheus.hugo.dev.br
+    port: 9090
