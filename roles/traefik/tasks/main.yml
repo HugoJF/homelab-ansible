@@ -1,0 +1,4 @@
+---
+
+- name: Configure Traefik
+  include_tasks: configure.yml

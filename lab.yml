@@ -1,7 +1,6 @@
 ---
 
-- name: configure traefik dynamic.yml
+- name: Run Traefik tasks
   hosts: all
-  gather_facts: false
   roles:
-    - lab
+    - traefik

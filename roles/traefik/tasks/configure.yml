@@ -1,0 +1,11 @@
+---
+
+- name: Generate Traefik dynamic configuration
+  template:
+    src: templates/dynamic.yml.j2
+    dest: "{{ ansible_user_dir }}/code/traefik/dynamic.yml"
+    mode: 0755
+  vars:
+    services: "{{ traefik_services }}"
+  notify:
+    - Restart Traefik
