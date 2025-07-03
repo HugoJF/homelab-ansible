@@ -1,0 +1,9 @@
+---
+
+- name: Generate Prometheus targets
+  copy:
+    content: "{{ prometheus_config | to_nice_yaml(indent=2) }}"
+    dest: "{{ ansible_user_dir }}/code/monitoring/prometheus/prometheus.yml"
+    mode: '0644'
+  notify:
+    - Restart Prometheus

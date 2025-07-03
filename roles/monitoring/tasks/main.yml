@@ -1,0 +1,12 @@
+---
+
+- name: Configure Prometheus
+  include_tasks:
+    file: configure-prometheus.yml
+    apply:
+      tags:
+        - prometheus
+        - monitoring
+  tags:
+    - monitoring
+    - prometheus

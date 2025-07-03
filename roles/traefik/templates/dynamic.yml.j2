@@ -2,7 +2,7 @@
 
 http:
   routers:
-    {% for service in services %}
+    {% for service in traefik_services %}
     {{ service.name }}-router:
       rule: "Host(`{{ service.url }}`)"
       service: {{ service.name }}

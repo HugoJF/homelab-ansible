@@ -1,0 +1,8 @@
+---
+
+- name: Restart Prometheus
+  community.docker.docker_compose_v2:
+    project_src: "{{ monitoring_project_src }}"
+    services:
+      - prometheus
+    state: restarted
