@@ -1,6 +1,6 @@
 # Config
-INVENTORY=inventory.ini
-PLAYBOOK=lab.yml
+INVENTORY=ansible/inventory.ini
+PLAYBOOK=ansible/lab.yml
 
 # Targets
 .PHONY: traefik__config__update
